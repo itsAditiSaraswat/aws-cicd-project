@@ -148,5 +148,58 @@ Clearly, the code is present in this directory
 ![50](https://user-images.githubusercontent.com/102405945/211769557-f8f0f62e-b426-481d-b209-11b09e6f61f1.png)
 
 
+### 3.7 Change permission of inbound traffic of port 8000
+Click **Add rule** and enter port number 8000 and select **Anywhere IPv4** it can be accessed by anyone. Click **Save rules**
+![54](https://user-images.githubusercontent.com/102405945/211807365-5fe644dd-7223-4a2e-8ef7-247517eec3b2.png)
+![55](https://user-images.githubusercontent.com/102405945/211807378-983373e8-93d5-4876-89ba-32699362e9ef.png)
 
-### 3.7 Run node.js application
+
+### 3.8 Run node.js application
+On console, run the following commands: <br>
+**sudo apt install nodejs** <br>
+**sudo apt install npm** <br>
+**npm install** <br>
+**node app.js** <br>
+![51](https://user-images.githubusercontent.com/102405945/211807429-539b13f6-cc36-4c9a-8d62-c17202247151.png)
+![52](https://user-images.githubusercontent.com/102405945/211807441-5f3e28fd-5f4b-491f-809d-b232449c90c6.png)
+![53](https://user-images.githubusercontent.com/102405945/211807456-4fe867de-817f-4a4f-afd9-53c7e3546a37.png)
+![56](https://user-images.githubusercontent.com/102405945/211807470-1bd37f3f-1e7e-4234-aa6a-f3b24fce6fd2.png)
+
+
+
+## 4. Automating using Docker
+
+## 4.1 Install Docker
+Remove Dockerfile and install Docker using following command: <br>
+**sudo rm Dockerfile** <br>
+**sudo apt install docker.io** <br>
+![57](https://user-images.githubusercontent.com/102405945/211811699-e22e7e86-837c-425a-9f28-8a07e6242d6c.png)
+
+## 4.2 Create Dockerfile
+Edit Dockerfile using the command **sudo vim Dockerfile** and add following commands within it: <br>
+**FROM node:12.2.0-alpine** <br>
+**WORKDIR app** <br>
+**COPY . .** <br>
+**RUN npm install** <br>
+**EXPOSE 8000** <br>
+**CMD ["node", "app.js"]** <br>
+![58](https://user-images.githubusercontent.com/102405945/211811726-0638ac1b-94e2-4581-9066-75e6b8e2b2ac.png)
+
+## 4.3 Build Docker
+On console, enter the following commands:
+**sudo usernod -a -G docker $USER** <br>
+**sudo reboot** <br>
+To give permission to docker and reboot the system
+![59](https://user-images.githubusercontent.com/102405945/211811758-ac46d053-c589-4af8-82ca-ac3ed65b560b.png)
+After restarting, enter the following command: <br>
+**sudo build . -t todo-node-app** <br>
+![63](https://user-images.githubusercontent.com/102405945/211811786-451dd302-58a9-4bd5-bf4c-8741978a738c.png)
+
+
+## 4.4 Run Docker
+After building docker, enter the following command: <br>
+**docker run -d --name node-todo-app -p 8000:8000 todo-node-app** <br>
+![64](https://user-images.githubusercontent.com/102405945/211811806-f4f2eb1d-d4be-4b0a-910d-acbf60f97d7c.png)
+![65](https://user-images.githubusercontent.com/102405945/211811820-1c82be6d-b3f5-4742-aa72-b3be9be4b194.png)
+
+
