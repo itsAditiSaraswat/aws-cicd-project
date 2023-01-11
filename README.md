@@ -10,6 +10,9 @@
 <br>
 
 **Primary Technology:** Github, Docker, Jenkins, aws EC2 service
+<br><br>
+
+![Design Thinking Whiteboard in Yellow Blue Basic Style](https://user-images.githubusercontent.com/102405945/211872655-4ed92a9f-bf03-41bc-ac92-043594863cd8.png)
 
 
 <br><br>
